@@ -15,16 +15,16 @@
    生成り(白)を基調に、紅(shu)を主役として全体に配置する。
    ============================================================ */
 :root{
-  --washi:      #F7F1E3;   /* 生成り(paper) - メイン背景 */
-  --washi-2:    #EFE6D2;   /* やや濃い生成り - カード背景 */
-  --washi-line: #E2D5B8;   /* 淡い金土台の罫線 */
+  --washi:      #FDFBF7;   /* ほぼ白 - メイン背景。澄んだ白を基調に */
+  --washi-2:    #F5EEE3;   /* やや濃い生成り - カード背景 */
+  --washi-line: #E7DFD2;   /* 淡い罫線 */
   --sumi:       #141F38;   /* 藍色(indigo ink) - 濃色セクション背景。より深く、重厚に */
   --sumi-2:     #0C1524;   /* 深藍(ほぼ黒) - グラデーション用 */
   --sumi-text:  #221C14;   /* 本文用の墨色 */
   --paper-text: #F3ECDC;   /* 濃色セクション上のテキスト */
   --paper-sub:  #C4CBDC;   /* 濃色セクション上の副次テキスト */
-  --shu:        #B3212B;   /* 蘇芳(すおう)を明るくした版 - メインアクセント/CTA。紅一色を主役に */
-  --shu-deep:   #8C1620;   /* 蘇芳 hover(より深く) */
+  --shu:        #C31C2C;   /* 朱色 - はっきりした紅一色をメインアクセント/CTAに */
+  --shu-deep:   #9E1420;   /* 朱色 hover(より深く) */
   --kin:        #97753C;   /* 真鍮(ブロンズ) - 罫線・数字・ラベル */
   --kin-bright: #C6A15A;   /* 真鍮 - 濃色背景上の金 */
   --matsu:      #1E4438;   /* 深緑(ボトルグリーン) - タグ・差し色 */
@@ -130,7 +130,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(247, 241, 227, 0.9);
+  background: rgba(253, 251, 247, 0.9);
   backdrop-filter: blur(10px);
 }
 .site-header.is-scrolled{ box-shadow: 0 8px 24px var(--shadow); }
@@ -206,8 +206,8 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .btn:focus-visible{ outline: 3px solid var(--kin-bright); outline-offset: 2px; }
 .btn--primary{
   background: var(--shu);
-  color: #FBF3E7;
-  box-shadow: 0 10px 24px -8px rgba(179, 33, 43, 0.5);
+  color: #FDFBF7;
+  box-shadow: 0 10px 24px -8px rgba(195, 28, 44, 0.5);
 }
 .btn--primary:hover{ background: var(--shu-deep); transform: translateY(-1px); }
 .btn--lg{ padding: 18px 40px; font-size: 1rem; }
@@ -310,11 +310,11 @@ ul{ margin: 0; padding: 0; list-style: none; }
   font-weight: 800;
   font-size: 1.25rem;
   line-height: 1;
-  border: 2px solid rgba(247,241,227,0.9);
+  border: 2px solid rgba(253,251,247,0.9);
   outline: 1px solid var(--shu-deep);
   border-radius: 3px;
   transform: rotate(-4deg);
-  box-shadow: 0 8px 18px -8px rgba(179, 33, 43, 0.55);
+  box-shadow: 0 8px 18px -8px rgba(195, 28, 44, 0.55);
 }
 
 /* ---------- quote callout ---------- */
@@ -776,7 +776,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
   <div class="container">
     <a class="brand" href="#top">
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-        <circle cx="15" cy="12" r="6.5" fill="#B3212B"/>
+        <circle cx="15" cy="12" r="6.5" fill="#C31C2C"/>
         <path d="M3 22H27M8 22V15L15 10L22 15V22" stroke="#97753C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       SAMURAI GATE<small>× SHIN JAPAN</small>
@@ -818,7 +818,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
       </div>
       <svg class="hero-motif" viewBox="0 0 400 460" fill="none" aria-hidden="true">
         <!-- 日の丸=SAMURAI GATE -->
-        <circle cx="200" cy="150" r="92" fill="#B3212B" opacity="0.95"/>
+        <circle cx="200" cy="150" r="92" fill="#C31C2C" opacity="0.95"/>
         <g stroke="#97753C" stroke-width="2" opacity="0.55">
           <line x1="200" y1="20" x2="200" y2="0"/>
           <line x1="288" y1="62" x2="304" y2="48"/>
@@ -835,8 +835,8 @@ ul{ margin: 0; padding: 0; list-style: none; }
         </g>
         <!-- 手を取り合う二人。日本人同士が協力してゲートをくぐる -->
         <g stroke="#141F38" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="177" cy="356" r="14" fill="#F7F1E3"/>
-          <circle cx="223" cy="356" r="14" fill="#F7F1E3"/>
+          <circle cx="177" cy="356" r="14" fill="#FDFBF7"/>
+          <circle cx="223" cy="356" r="14" fill="#FDFBF7"/>
           <path d="M177 372 L177 402"/>
           <path d="M223 372 L223 402"/>
           <path d="M177 384 L197 396"/>
@@ -846,7 +846,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
           <path d="M223 402 L212 424"/>
           <path d="M223 402 L234 424"/>
         </g>
-        <circle cx="200" cy="396" r="6.5" fill="#B3212B"/>
+        <circle cx="200" cy="396" r="6.5" fill="#C31C2C"/>
         <g fill="#97753C" opacity="0.7">
           <circle cx="70" cy="430" r="3"/>
           <circle cx="110" cy="440" r="3"/>
