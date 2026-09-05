@@ -12,6 +12,7 @@
 /* ============================================================
    SAMURAI GATE — 単一の世界観として設計(ブランドカラー固定)。
    ダーク/ライトOS設定に関わらず同一の配色で表示する。
+   生成り(白)を基調に、紅(shu)を主役として全体に配置する。
    ============================================================ */
 :root{
   --washi:      #F7F1E3;   /* 生成り(paper) - メイン背景 */
@@ -22,9 +23,8 @@
   --sumi-text:  #221C14;   /* 本文用の墨色 */
   --paper-text: #F3ECDC;   /* 濃色セクション上のテキスト */
   --paper-sub:  #C4CBDC;   /* 濃色セクション上の副次テキスト */
-  --shu:        #8A2F2C;   /* 蘇芳(すおう) - 深い赤褐色。メインアクセント/CTA */
-  --shu-deep:   #6B2320;   /* 蘇芳 hover(より深く) */
-  --shu-bright: #C1503F;   /* 蘇芳の明度を上げた版 - 濃色背景上での視認性用 */
+  --shu:        #B3212B;   /* 蘇芳(すおう)を明るくした版 - メインアクセント/CTA。紅一色を主役に */
+  --shu-deep:   #8C1620;   /* 蘇芳 hover(より深く) */
   --kin:        #97753C;   /* 真鍮(ブロンズ) - 罫線・数字・ラベル */
   --kin-bright: #C6A15A;   /* 真鍮 - 濃色背景上の金 */
   --matsu:      #1E4438;   /* 深緑(ボトルグリーン) - タグ・差し色 */
@@ -107,7 +107,6 @@ ul{ margin: 0; padding: 0; list-style: none; }
   color: color-mix(in srgb, var(--sumi-text) 78%, transparent);
   max-width: 620px;
 }
-.on-dark .section-lede{ color: var(--paper-sub); }
 .divider{
   height: 24px;
   background-repeat: repeat-x;
@@ -118,12 +117,6 @@ ul{ margin: 0; padding: 0; list-style: none; }
   background-image: radial-gradient(circle at 14px 0px, transparent 11px, var(--kin) 11.5px, var(--kin) 12px, transparent 12.5px);
   background-color: var(--washi);
 }
-.divider--dark{
-  background-image: radial-gradient(circle at 14px 0px, transparent 11px, var(--kin-bright) 11.5px, var(--kin-bright) 12px, transparent 12.5px);
-  background-color: var(--sumi);
-  opacity: 0.35;
-}
-
 /* ---------- header ---------- */
 .site-header{
   position: fixed;
@@ -214,12 +207,12 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .btn--primary{
   background: var(--shu);
   color: #FBF3E7;
-  box-shadow: 0 10px 24px -8px rgba(138, 47, 44, 0.5);
+  box-shadow: 0 10px 24px -8px rgba(179, 33, 43, 0.5);
 }
 .btn--primary:hover{ background: var(--shu-deep); transform: translateY(-1px); }
 .btn--lg{ padding: 18px 40px; font-size: 1rem; }
-.btn--on-dark{ border-color: var(--kin-bright); color: var(--paper-text); }
-.btn--on-dark:hover{ background: var(--kin-bright); color: var(--sumi); }
+.btn--outline{ border-color: var(--sumi); color: var(--sumi); }
+.btn--outline:hover{ background: var(--sumi); color: var(--paper-text); }
 .btn--sm{ padding: 10px 20px; font-size: 0.82rem; }
 .nav-cta{ display: flex; }
 .nav-toggle{
@@ -231,8 +224,8 @@ ul{ margin: 0; padding: 0; list-style: none; }
 /* ---------- hero ---------- */
 .hero{
   position: relative;
-  background: radial-gradient(ellipse at 78% 18%, #1E2E4C 0%, var(--sumi) 46%, var(--sumi-2) 100%);
-  color: var(--paper-text);
+  background: radial-gradient(ellipse 900px 700px at 82% 20%, color-mix(in srgb, var(--shu) 12%, var(--washi)) 0%, var(--washi) 60%);
+  color: var(--sumi-text);
   padding: 164px 0 108px;
   overflow: hidden;
   isolation: isolate;
@@ -258,22 +251,21 @@ ul{ margin: 0; padding: 0; list-style: none; }
   gap: 40px;
 }
 .hero-eyebrow{
-  color: var(--kin-bright);
+  color: var(--shu);
   margin-bottom: 22px;
   display: block;
 }
 .hero h1{
   font-size: clamp(2.1rem, 4.4vw, 3.2rem);
-  color: var(--paper-text);
   margin-bottom: 24px;
 }
 .hero h1 em{
   font-style: normal;
-  color: var(--kin-bright);
+  color: var(--shu);
 }
 .hero-desc{
   font-size: 1.06rem;
-  color: var(--paper-sub);
+  color: color-mix(in srgb, var(--sumi-text) 72%, transparent);
   max-width: 500px;
   margin-bottom: 36px;
 }
@@ -288,18 +280,18 @@ ul{ margin: 0; padding: 0; list-style: none; }
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
-  border-top: 1px solid rgba(216, 191, 138, 0.25);
+  border-top: 1px solid var(--washi-line);
   padding-top: 26px;
 }
 .hero-stat b{
   display: block;
   font-family: "Shippori Mincho", serif;
   font-size: 1.8rem;
-  color: var(--paper-text);
+  color: var(--sumi-text);
 }
 .hero-stat span{
   font-size: 0.82rem;
-  color: var(--paper-sub);
+  color: color-mix(in srgb, var(--sumi-text) 65%, transparent);
 }
 
 /* ---------- hanko seal ---------- */
@@ -322,7 +314,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
   outline: 1px solid var(--shu-deep);
   border-radius: 3px;
   transform: rotate(-4deg);
-  box-shadow: 0 8px 18px -8px rgba(138, 47, 44, 0.55);
+  box-shadow: 0 8px 18px -8px rgba(179, 33, 43, 0.55);
 }
 
 /* ---------- quote callout ---------- */
@@ -330,7 +322,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
   display: flex;
   align-items: center;
   gap: 18px;
-  background: var(--sumi);
+  background: var(--shu);
   color: var(--paper-text);
   border-radius: 2px;
   padding: 24px 28px;
@@ -394,31 +386,26 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .value-card h3{ font-size: 1.25rem; margin: 10px 0 12px; }
 .value-card p{ color: color-mix(in srgb, var(--sumi-text) 78%, transparent); font-size: 0.92rem; }
 
-/* ---------- why-now (dark) ---------- */
-.section--dark{
-  background: linear-gradient(180deg, var(--sumi) 0%, var(--sumi-2) 100%);
-  color: var(--paper-text);
-}
-.section--dark .section-title{ color: var(--paper-text); }
+/* ---------- why-now ---------- */
 .why-grid{
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   gap: 52px;
   align-items: start;
 }
-.why-copy p{ color: var(--paper-sub); }
-.why-copy strong{ color: var(--kin-bright); font-weight: 700; }
+.why-copy p{ color: color-mix(in srgb, var(--sumi-text) 78%, transparent); }
+.why-copy strong{ color: var(--shu); font-weight: 700; }
 .issue-card{
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(216,191,138,0.28);
-  border-left: 3px solid var(--kin-bright);
+  background: var(--washi-2);
+  border: 1px solid var(--washi-line);
+  border-left: 3px solid var(--kin);
   border-radius: 2px;
   padding: 18px 22px;
 }
 .issue-list{ display: flex; flex-direction: column; gap: 14px; }
-.issue-card h4{ font-size: 0.98rem; color: var(--paper-text); margin-bottom: 5px; }
-.issue-card p{ font-size: 0.88rem; color: var(--paper-sub); }
-.issue-card:nth-child(2){ border-left-color: var(--shu-bright); }
+.issue-card h4{ font-size: 0.98rem; margin-bottom: 5px; }
+.issue-card p{ font-size: 0.88rem; color: color-mix(in srgb, var(--sumi-text) 75%, transparent); }
+.issue-card:nth-child(2){ border-left-color: var(--shu); }
 .issue-card:nth-child(3){ border-left-color: var(--matsu); }
 
 /* ---------- challenge icon grid ---------- */
@@ -428,27 +415,28 @@ ul{ margin: 0; padding: 0; list-style: none; }
   gap: 20px;
 }
 .icon-card{
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(216,191,138,0.25);
+  background: var(--washi);
+  border: 1px solid var(--washi-line);
   border-radius: 2px;
   padding: 24px 22px;
   transition: border-color .2s ease, transform .2s ease;
 }
-.icon-card:hover{ border-color: var(--kin-bright); transform: translateY(-3px); }
+.icon-card:hover{ border-color: var(--shu); transform: translateY(-3px); }
 .icon-card .ic{
   width: 38px; height: 38px;
-  color: var(--shu-bright);
+  color: var(--shu);
   margin-bottom: 14px;
 }
-.icon-card h4{ font-size: 0.98rem; margin-bottom: 7px; color: var(--paper-text); }
-.icon-card p{ font-size: 0.86rem; color: var(--paper-sub); }
+.icon-card h4{ font-size: 0.98rem; margin-bottom: 7px; }
+.icon-card p{ font-size: 0.86rem; color: color-mix(in srgb, var(--sumi-text) 72%, transparent); }
 
 /* ---------- business ---------- */
 .biz-card{
   border-radius: 3px;
   padding: 38px;
-  background: var(--sumi);
-  color: var(--paper-text);
+  background: var(--washi-2);
+  border: 2px solid var(--shu);
+  color: var(--sumi-text);
 }
 .biz-tag{
   display: inline-block;
@@ -458,39 +446,39 @@ ul{ margin: 0; padding: 0; list-style: none; }
   padding: 5px 12px;
   border-radius: 999px;
   margin-bottom: 16px;
-  background: rgba(214,170,92,0.16);
-  color: var(--kin-bright);
+  background: color-mix(in srgb, var(--shu) 12%, transparent);
+  color: var(--shu);
 }
 .biz-card h3{ font-size: 1.4rem; margin-bottom: 14px; }
-.biz-card > p{ font-size: 0.98rem; margin-bottom: 26px; color: var(--paper-sub); max-width: 640px; }
+.biz-card > p{ font-size: 0.98rem; margin-bottom: 26px; color: color-mix(in srgb, var(--sumi-text) 78%, transparent); max-width: 640px; }
 .pillar-row{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  background: rgba(216,191,138,0.22);
+  background: var(--washi-line);
   border-radius: 2px;
   overflow: hidden;
 }
 .pillar{
   text-align: center;
   padding: 24px 14px;
-  background: rgba(255,255,255,0.04);
+  background: var(--washi);
 }
 .pillar .ic{
   width: 28px; height: 28px;
   margin: 0 auto 12px;
-  color: var(--kin-bright);
+  color: var(--shu);
 }
-.pillar h4{ font-size: 0.88rem; letter-spacing: 0.04em; margin-bottom: 5px; color: var(--paper-text); }
-.pillar span{ font-size: 0.78rem; color: var(--paper-sub); }
+.pillar h4{ font-size: 0.88rem; letter-spacing: 0.04em; margin-bottom: 5px; }
+.pillar span{ font-size: 0.78rem; color: color-mix(in srgb, var(--sumi-text) 68%, transparent); }
 .biz-note{
   margin-top: 22px;
   font-size: 0.86rem;
-  color: var(--paper-sub);
-  border-top: 1px solid rgba(216,191,138,0.22);
+  color: color-mix(in srgb, var(--sumi-text) 75%, transparent);
+  border-top: 1px solid var(--washi-line);
   padding-top: 18px;
 }
-.biz-note strong{ color: var(--kin-bright); font-weight: 700; }
+.biz-note strong{ color: var(--shu); font-weight: 700; }
 
 /* ---------- network areas ---------- */
 .area-grid{
@@ -526,7 +514,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
   display: block;
 }
 .area-card--total{
-  background: var(--sumi);
+  background: var(--shu);
   color: var(--paper-text);
   display: flex;
   flex-direction: column;
@@ -604,24 +592,24 @@ ul{ margin: 0; padding: 0; list-style: none; }
 }
 .founder-bio{ font-size: 0.9rem; color: color-mix(in srgb, var(--sumi-text) 80%, transparent); }
 
-/* ---------- final CTA ---------- */
+/* ---------- launch event / final CTA ---------- */
 .cta-section{
-  background: radial-gradient(ellipse at 30% 20%, #1E2E4C 0%, var(--sumi) 55%, var(--sumi-2) 100%);
-  color: var(--paper-text);
+  background: radial-gradient(ellipse 900px 500px at 50% 0%, color-mix(in srgb, var(--shu) 9%, var(--washi-2)) 0%, var(--washi-2) 65%);
+  color: var(--sumi-text);
   padding: 108px 0;
   text-align: center;
+  border-top: 3px solid var(--shu);
 }
-.cta-section .eyebrow{ color: var(--kin-bright); }
+.cta-section .eyebrow{ color: var(--shu); }
 .cta-section h2{
   font-size: clamp(1.8rem, 3.8vw, 2.6rem);
   margin: 20px auto 18px;
   max-width: 640px;
-  color: var(--paper-text);
 }
 .cta-section > .container > p{
   max-width: 520px;
   margin: 0 auto 40px;
-  color: var(--paper-sub);
+  color: color-mix(in srgb, var(--sumi-text) 78%, transparent);
 }
 .cta-actions{
   display: flex;
@@ -640,8 +628,9 @@ ul{ margin: 0; padding: 0; list-style: none; }
   text-align: left;
 }
 .event-card{
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(198,161,90,0.28);
+  background: var(--washi);
+  border: 1px solid var(--washi-line);
+  border-top: 3px solid var(--shu);
   border-radius: 3px;
   padding: 26px;
 }
@@ -649,22 +638,21 @@ ul{ margin: 0; padding: 0; list-style: none; }
   display: block;
   font-family: "Shippori Mincho", serif;
   font-size: 1.25rem;
-  color: var(--paper-text);
 }
 .event-date small{
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 0.76rem;
   font-weight: 700;
-  color: var(--kin-bright);
+  color: var(--shu);
   margin-left: 6px;
 }
 .event-time{
   display: block;
   font-size: 0.8rem;
-  color: var(--paper-sub);
+  color: color-mix(in srgb, var(--sumi-text) 72%, transparent);
   margin: 6px 0 20px;
   padding-bottom: 18px;
-  border-bottom: 1px solid rgba(198,161,90,0.22);
+  border-bottom: 1px solid var(--washi-line);
 }
 .speaker{ display: flex; gap: 18px; align-items: flex-start; }
 .speaker-photo{
@@ -674,19 +662,19 @@ ul{ margin: 0; padding: 0; list-style: none; }
   object-fit: cover;
   object-position: 50% 15%;
   flex-shrink: 0;
-  border: 1px solid rgba(198,161,90,0.35);
+  border: 2px solid var(--shu);
 }
 .speaker-placeholder{
   width: 84px;
   height: 84px;
   border-radius: 3px;
-  border: 1px dashed rgba(198,161,90,0.4);
+  border: 1px dashed var(--kin);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Shippori Mincho", serif;
   font-size: 1.7rem;
-  color: rgba(198,161,90,0.5);
+  color: var(--kin);
   flex-shrink: 0;
 }
 .speaker-info{ text-align: left; min-width: 0; }
@@ -694,24 +682,25 @@ ul{ margin: 0; padding: 0; list-style: none; }
   font-size: 0.64rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: var(--kin-bright);
+  color: var(--shu);
 }
-.speaker-name{ font-size: 1.02rem; margin: 6px 0 2px; color: var(--paper-text); }
+.speaker-name{ font-size: 1.02rem; margin: 6px 0 2px; }
 .speaker-name small{
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
   font-size: 0.8rem;
-  color: var(--paper-sub);
+  color: color-mix(in srgb, var(--sumi-text) 65%, transparent);
   margin-left: 6px;
 }
-.speaker-role{ display: block; font-size: 0.76rem; color: var(--kin-bright); font-weight: 700; margin-bottom: 10px; }
-.speaker-bio{ font-size: 0.8rem; line-height: 1.75; color: var(--paper-sub); }
+.speaker-role{ display: block; font-size: 0.76rem; color: var(--kin); font-weight: 700; margin-bottom: 10px; }
+.speaker-bio{ font-size: 0.8rem; line-height: 1.75; color: color-mix(in srgb, var(--sumi-text) 75%, transparent); }
 
 /* ---------- footer ---------- */
 .site-footer{
   background: var(--sumi-2);
   color: var(--paper-sub);
   padding: 52px 0 30px;
+  border-top: 3px solid var(--shu);
 }
 .footer-top{
   display: flex;
@@ -787,7 +776,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
   <div class="container">
     <a class="brand" href="#top">
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-        <circle cx="15" cy="12" r="6.5" fill="#8A2F2C"/>
+        <circle cx="15" cy="12" r="6.5" fill="#B3212B"/>
         <path d="M3 22H27M8 22V15L15 10L22 15V22" stroke="#97753C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       SAMURAI GATE<small>× SHIN JAPAN</small>
@@ -819,7 +808,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
         <p class="hero-desc">アメリカで挑戦する日本人のための、信頼できる専門家コミュニティ。ビザ、資金調達、暮らしのことまで、一人で抱え込まず、まずはローンチ記念の無料勉強会でお会いしましょう。</p>
         <div class="hero-actions">
           <a class="btn btn--primary" href="#cta">無料勉強会に申し込む →</a>
-          <a class="btn btn--on-dark" href="#philosophy">SAMURAI GATEとは</a>
+          <a class="btn btn--outline" href="#philosophy">SAMURAI GATEとは</a>
         </div>
         <div class="hero-stats">
           <div class="hero-stat"><b>38</b><span>専門家カテゴリー</span></div>
@@ -828,8 +817,9 @@ ul{ margin: 0; padding: 0; list-style: none; }
         </div>
       </div>
       <svg class="hero-motif" viewBox="0 0 400 460" fill="none" aria-hidden="true">
-        <circle cx="200" cy="150" r="92" fill="#8A2F2C" opacity="0.9"/>
-        <g stroke="#C6A15A" stroke-width="2" opacity="0.6">
+        <!-- 日の丸=SAMURAI GATE -->
+        <circle cx="200" cy="150" r="92" fill="#B3212B" opacity="0.95"/>
+        <g stroke="#97753C" stroke-width="2" opacity="0.55">
           <line x1="200" y1="20" x2="200" y2="0"/>
           <line x1="288" y1="62" x2="304" y2="48"/>
           <line x1="330" y1="150" x2="352" y2="150"/>
@@ -838,12 +828,26 @@ ul{ margin: 0; padding: 0; list-style: none; }
           <line x1="70" y1="150" x2="48" y2="150"/>
           <line x1="112" y1="62" x2="96" y2="48"/>
         </g>
-        <g stroke="#F3ECDC" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <g stroke="#141F38" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path d="M60 300 L340 300"/>
           <path d="M100 300 L100 420 M100 300 L200 246 L300 300 M300 300 L300 420"/>
           <path d="M60 340 L340 340"/>
         </g>
-        <g fill="#C6A15A" opacity="0.7">
+        <!-- 手を取り合う二人。日本人同士が協力してゲートをくぐる -->
+        <g stroke="#141F38" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="177" cy="356" r="14" fill="#F7F1E3"/>
+          <circle cx="223" cy="356" r="14" fill="#F7F1E3"/>
+          <path d="M177 372 L177 402"/>
+          <path d="M223 372 L223 402"/>
+          <path d="M177 384 L197 396"/>
+          <path d="M223 384 L203 396"/>
+          <path d="M177 402 L166 424"/>
+          <path d="M177 402 L188 424"/>
+          <path d="M223 402 L212 424"/>
+          <path d="M223 402 L234 424"/>
+        </g>
+        <circle cx="200" cy="396" r="6.5" fill="#B3212B"/>
+        <g fill="#97753C" opacity="0.7">
           <circle cx="70" cy="430" r="3"/>
           <circle cx="110" cy="440" r="3"/>
           <circle cx="150" cy="430" r="3"/>
@@ -919,7 +923,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
   </section>
 
   <!-- WHY NOW (dark) -->
-  <section class="section section--dark">
+  <section class="section">
     <div class="container why-grid">
       <div class="why-copy">
         <span class="eyebrow section-num" style="color:var(--kin-bright);">03 — Why Now</span>
@@ -943,14 +947,14 @@ ul{ margin: 0; padding: 0; list-style: none; }
     </div>
   </section>
 
-  <div class="divider divider--dark" style="background-color:var(--sumi-2);" aria-hidden="true"></div>
+  <div class="divider divider--light" aria-hidden="true"></div>
 
   <!-- CHALLENGE -->
-  <section class="section section--tight" style="background:var(--sumi-2); padding-top:0;">
+  <section class="section section--tight" style="background:var(--washi-2);">
     <div class="container">
-      <div class="section-head on-dark" style="margin-bottom:40px;">
-        <span class="eyebrow section-num" style="color:var(--kin-bright);">04 — The Challenge</span>
-        <h2 class="section-title" style="color:var(--paper-text); max-width:none;">海外挑戦には「情報」だけでは足りない。</h2>
+      <div class="section-head">
+        <span class="eyebrow section-num">04 — The Challenge</span>
+        <h2 class="section-title" style="max-width:none;">海外挑戦には「情報」だけでは足りない。</h2>
         <p class="section-lede">本当に必要なのは、インターネットの情報ではなく「信頼できる誰かにつながること」です。</p>
       </div>
       <div class="icon-grid">
@@ -980,9 +984,9 @@ ul{ margin: 0; padding: 0; list-style: none; }
           <p>AIをどう活用する?何から始めればいい?</p>
         </div>
       </div>
-      <div class="callout" style="margin-top:40px; background:rgba(214,170,92,0.1); border:1px solid rgba(216,191,138,0.3);">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--kin-bright)" stroke-width="1.6"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="9"/></svg>
-        <p style="color:var(--kin-bright);">「情報を知っている」と「信頼できる専門家につながっている」は、まったく違う。</p>
+      <div class="callout" style="margin-top:40px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="9"/></svg>
+        <p>「情報を知っている」と「信頼できる専門家につながっている」は、まったく違う。</p>
       </div>
     </div>
   </section>
