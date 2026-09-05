@@ -17,17 +17,18 @@
   --washi:      #F7F1E3;   /* 生成り(paper) - メイン背景 */
   --washi-2:    #EFE6D2;   /* やや濃い生成り - カード背景 */
   --washi-line: #E2D5B8;   /* 淡い金土台の罫線 */
-  --sumi:       #1E2A47;   /* 藍色(indigo ink) - 濃色セクション背景 */
-  --sumi-2:     #16213A;   /* 深藍 - グラデーション用 */
-  --sumi-text:  #2A2115;   /* 本文用の温かい墨色 */
+  --sumi:       #141F38;   /* 藍色(indigo ink) - 濃色セクション背景。より深く、重厚に */
+  --sumi-2:     #0C1524;   /* 深藍(ほぼ黒) - グラデーション用 */
+  --sumi-text:  #221C14;   /* 本文用の墨色 */
   --paper-text: #F3ECDC;   /* 濃色セクション上のテキスト */
-  --paper-sub:  #C8CEDC;   /* 濃色セクション上の副次テキスト */
-  --shu:        #C1391F;   /* 朱色(鳥居の赤) - メインアクセント/CTA */
-  --shu-deep:   #96280F;   /* 朱色 hover */
-  --kin:        #B8863C;   /* 金 - 罫線・数字・ラベル */
-  --kin-bright: #D6AA5C;   /* 金 - 濃色背景上の金 */
-  --matsu:      #2E5C4C;   /* 松葉色 - タグ・差し色 */
-  --shadow:     rgba(30, 42, 71, 0.14);
+  --paper-sub:  #C4CBDC;   /* 濃色セクション上の副次テキスト */
+  --shu:        #8A2F2C;   /* 蘇芳(すおう) - 深い赤褐色。メインアクセント/CTA */
+  --shu-deep:   #6B2320;   /* 蘇芳 hover(より深く) */
+  --shu-bright: #C1503F;   /* 蘇芳の明度を上げた版 - 濃色背景上での視認性用 */
+  --kin:        #97753C;   /* 真鍮(ブロンズ) - 罫線・数字・ラベル */
+  --kin-bright: #C6A15A;   /* 真鍮 - 濃色背景上の金 */
+  --matsu:      #1E4438;   /* 深緑(ボトルグリーン) - タグ・差し色 */
+  --shadow:     rgba(20, 31, 56, 0.18);
 }
 
 *{ box-sizing: border-box; }
@@ -213,7 +214,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .btn--primary{
   background: var(--shu);
   color: #FBF3E7;
-  box-shadow: 0 10px 24px -8px rgba(193, 57, 31, 0.55);
+  box-shadow: 0 10px 24px -8px rgba(138, 47, 44, 0.5);
 }
 .btn--primary:hover{ background: var(--shu-deep); transform: translateY(-1px); }
 .btn--lg{ padding: 18px 40px; font-size: 1rem; }
@@ -230,7 +231,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
 /* ---------- hero ---------- */
 .hero{
   position: relative;
-  background: radial-gradient(ellipse at 78% 18%, #253758 0%, var(--sumi) 46%, var(--sumi-2) 100%);
+  background: radial-gradient(ellipse at 78% 18%, #1E2E4C 0%, var(--sumi) 46%, var(--sumi-2) 100%);
   color: var(--paper-text);
   padding: 164px 0 108px;
   overflow: hidden;
@@ -324,7 +325,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
   outline: 1px solid var(--shu-deep);
   border-radius: 3px;
   transform: rotate(-4deg);
-  box-shadow: 0 8px 18px -8px rgba(193, 57, 31, 0.6);
+  box-shadow: 0 8px 18px -8px rgba(138, 47, 44, 0.55);
 }
 
 /* ---------- quote callout ---------- */
@@ -420,7 +421,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .issue-list{ display: flex; flex-direction: column; gap: 14px; }
 .issue-card h4{ font-size: 0.98rem; color: var(--paper-text); margin-bottom: 5px; }
 .issue-card p{ font-size: 0.88rem; color: var(--paper-sub); }
-.issue-card:nth-child(2){ border-left-color: var(--shu); }
+.issue-card:nth-child(2){ border-left-color: var(--shu-bright); }
 .issue-card:nth-child(3){ border-left-color: var(--matsu); }
 
 /* ---------- challenge icon grid ---------- */
@@ -439,7 +440,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .icon-card:hover{ border-color: var(--kin-bright); transform: translateY(-3px); }
 .icon-card .ic{
   width: 38px; height: 38px;
-  color: var(--shu);
+  color: var(--shu-bright);
   margin-bottom: 14px;
 }
 .icon-card h4{ font-size: 0.98rem; margin-bottom: 7px; color: var(--paper-text); }
@@ -608,7 +609,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
 
 /* ---------- final CTA ---------- */
 .cta-section{
-  background: radial-gradient(ellipse at 30% 20%, #253758 0%, var(--sumi) 55%, var(--sumi-2) 100%);
+  background: radial-gradient(ellipse at 30% 20%, #1E2E4C 0%, var(--sumi) 55%, var(--sumi-2) 100%);
   color: var(--paper-text);
   padding: 108px 0;
   text-align: center;
@@ -710,8 +711,8 @@ ul{ margin: 0; padding: 0; list-style: none; }
   <div class="container">
     <a class="brand" href="#top">
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-        <circle cx="15" cy="12" r="6.5" fill="#C1391F"/>
-        <path d="M3 22H27M8 22V15L15 10L22 15V22" stroke="#B8863C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="15" cy="12" r="6.5" fill="#8A2F2C"/>
+        <path d="M3 22H27M8 22V15L15 10L22 15V22" stroke="#97753C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       SAMURAI GATE<small>× SHIN JAPAN</small>
     </a>
@@ -751,8 +752,8 @@ ul{ margin: 0; padding: 0; list-style: none; }
         </div>
       </div>
       <svg class="hero-motif" viewBox="0 0 400 460" fill="none" aria-hidden="true">
-        <circle cx="200" cy="150" r="92" fill="#C1391F" opacity="0.9"/>
-        <g stroke="#D6AA5C" stroke-width="2" opacity="0.6">
+        <circle cx="200" cy="150" r="92" fill="#8A2F2C" opacity="0.9"/>
+        <g stroke="#C6A15A" stroke-width="2" opacity="0.6">
           <line x1="200" y1="20" x2="200" y2="0"/>
           <line x1="288" y1="62" x2="304" y2="48"/>
           <line x1="330" y1="150" x2="352" y2="150"/>
@@ -766,7 +767,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
           <path d="M100 300 L100 420 M100 300 L200 246 L300 300 M300 300 L300 420"/>
           <path d="M60 340 L340 340"/>
         </g>
-        <g fill="#D6AA5C" opacity="0.7">
+        <g fill="#C6A15A" opacity="0.7">
           <circle cx="70" cy="430" r="3"/>
           <circle cx="110" cy="440" r="3"/>
           <circle cx="150" cy="430" r="3"/>
