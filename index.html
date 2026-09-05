@@ -238,13 +238,10 @@ ul{ margin: 0; padding: 0; list-style: none; }
   isolation: isolate;
 }
 .hero-motif{
-  position: absolute;
-  right: -6%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: min(48vw, 580px);
+  justify-self: center;
+  width: 100%;
+  max-width: 420px;
   opacity: 0.92;
-  z-index: -1;
   pointer-events: none;
 }
 .hero-rule{
@@ -668,7 +665,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
 /* ---------- responsive ---------- */
 @media (max-width: 980px){
   .hero .container{ grid-template-columns: 1fr; }
-  .hero-motif{ position: static; transform: none; width: 220px; margin-top: 40px; opacity: 0.85; }
+  .hero-motif{ max-width: 220px; margin-top: 40px; opacity: 0.85; }
   .hero{ padding-top: 140px; }
   .philosophy-grid,
   .why-grid,
