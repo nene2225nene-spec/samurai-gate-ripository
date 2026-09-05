@@ -28,6 +28,7 @@
   --kin:        #97753C;   /* 真鍮(ブロンズ) - 罫線・数字・ラベル */
   --kin-bright: #C6A15A;   /* 真鍮 - 濃色背景上の金 */
   --matsu:      #1E4438;   /* 深緑(ボトルグリーン) - タグ・差し色 */
+  --matsu-bright: #4F9678; /* 明るい緑 - 紅/藍の濃色背景上でCTAを目立たせる差し色 */
   --shadow:     rgba(20, 31, 56, 0.18);
 }
 
@@ -213,6 +214,12 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .btn--lg{ padding: 18px 40px; font-size: 1rem; }
 .btn--outline{ border-color: var(--sumi); color: var(--sumi); }
 .btn--outline:hover{ background: var(--sumi); color: var(--paper-text); }
+.btn--contrast{
+  background: var(--matsu-bright);
+  color: var(--paper-text);
+  box-shadow: 0 10px 24px -8px rgba(79, 150, 120, 0.5);
+}
+.btn--contrast:hover{ background: #3E7D63; transform: translateY(-1px); }
 .btn--sm{ padding: 10px 20px; font-size: 0.82rem; }
 .nav-cta{ display: flex; }
 .nav-toggle{
@@ -304,17 +311,16 @@ ul{ margin: 0; padding: 0; list-style: none; }
   width: 62px;
   height: 62px;
   flex-shrink: 0;
-  background: var(--shu);
-  color: var(--washi);
+  background: var(--washi);
+  color: var(--shu);
   font-family: "Shippori Mincho", serif;
   font-weight: 800;
   font-size: 1.25rem;
   line-height: 1;
-  border: 2px solid rgba(253,251,247,0.9);
-  outline: 1px solid var(--shu-deep);
+  border: 2px solid var(--shu);
   border-radius: 3px;
   transform: rotate(-4deg);
-  box-shadow: 0 8px 18px -8px rgba(195, 28, 44, 0.55);
+  box-shadow: 0 8px 18px -8px rgba(12, 21, 36, 0.4);
 }
 
 /* ---------- quote callout ---------- */
@@ -385,6 +391,20 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .value-card:nth-child(3) .value-num{ color: var(--matsu); }
 .value-card h3{ font-size: 1.25rem; margin: 10px 0 12px; }
 .value-card p{ color: color-mix(in srgb, var(--sumi-text) 78%, transparent); font-size: 0.92rem; }
+
+/* ---------- statement band(太字の主張ブロック) ---------- */
+.section--statement{
+  background: var(--sumi);
+  color: var(--paper-text);
+}
+.section--statement .section-title{ color: var(--paper-text); }
+.section--statement .value-card{
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(198,161,90,0.28);
+}
+.section--statement .value-card p{ color: var(--paper-sub); }
+.section--statement .value-card:nth-child(3){ border-top-color: var(--matsu-bright); }
+.section--statement .value-card:nth-child(3) .value-num{ color: var(--matsu-bright); }
 
 /* ---------- why-now ---------- */
 .why-grid{
@@ -594,22 +614,22 @@ ul{ margin: 0; padding: 0; list-style: none; }
 
 /* ---------- launch event / final CTA ---------- */
 .cta-section{
-  background: radial-gradient(ellipse 900px 500px at 50% 0%, color-mix(in srgb, var(--shu) 9%, var(--washi-2)) 0%, var(--washi-2) 65%);
-  color: var(--sumi-text);
+  background: var(--shu);
+  color: var(--paper-text);
   padding: 108px 0;
   text-align: center;
-  border-top: 3px solid var(--shu);
 }
-.cta-section .eyebrow{ color: var(--shu); }
+.cta-section .eyebrow{ color: rgba(253,251,247,0.85); }
 .cta-section h2{
   font-size: clamp(1.8rem, 3.8vw, 2.6rem);
   margin: 20px auto 18px;
   max-width: 640px;
+  color: var(--paper-text);
 }
 .cta-section > .container > p{
   max-width: 520px;
   margin: 0 auto 40px;
-  color: color-mix(in srgb, var(--sumi-text) 78%, transparent);
+  color: var(--paper-sub);
 }
 .cta-actions{
   display: flex;
@@ -630,7 +650,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .event-card{
   background: var(--washi);
   border: 1px solid var(--washi-line);
-  border-top: 3px solid var(--shu);
+  border-top: 4px solid var(--kin);
   border-radius: 3px;
   padding: 26px;
 }
@@ -695,12 +715,32 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .speaker-role{ display: block; font-size: 0.76rem; color: var(--kin); font-weight: 700; margin-bottom: 10px; }
 .speaker-bio{ font-size: 0.8rem; line-height: 1.75; color: color-mix(in srgb, var(--sumi-text) 75%, transparent); }
 
+/* ---------- mid-page CTA band ---------- */
+.mid-cta{
+  background: var(--shu);
+  color: var(--paper-text);
+  padding: 64px 0;
+  text-align: center;
+}
+.mid-cta .eyebrow{ color: rgba(253,251,247,0.85); }
+.mid-cta h3{
+  font-family: "Shippori Mincho", serif;
+  font-weight: 700;
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  color: var(--paper-text);
+  margin: 14px 0 16px;
+}
+.mid-cta p{
+  color: var(--paper-sub);
+  max-width: 480px;
+  margin: 0 auto 28px;
+}
+
 /* ---------- footer ---------- */
 .site-footer{
   background: var(--sumi-2);
   color: var(--paper-sub);
   padding: 52px 0 30px;
-  border-top: 3px solid var(--shu);
 }
 .footer-top{
   display: flex;
@@ -896,10 +936,10 @@ ul{ margin: 0; padding: 0; list-style: none; }
   </section>
 
   <!-- VALUES -->
-  <section class="section section--tight" style="background:var(--washi-2);">
+  <section class="section section--tight section--statement">
     <div class="container">
       <div class="section-head section-head--center">
-        <span class="eyebrow section-num">02 — Vision</span>
+        <span class="eyebrow section-num" style="color:var(--kin-bright);">02 — Vision</span>
         <h2 class="section-title">支え合い、一丸となる。<br>SAMURAI GATEが大切にする3つの価値観。</h2>
       </div>
       <div class="value-grid">
@@ -1071,6 +1111,16 @@ ul{ margin: 0; padding: 0; list-style: none; }
     </div>
   </section>
 
+  <!-- MID-PAGE CTA -->
+  <section class="mid-cta">
+    <div class="container">
+      <span class="eyebrow">Free Seminar</span>
+      <h3>ここまで読んで気になった方へ。<br>まずは無料勉強会で、直接お話ししませんか。</h3>
+      <p>ローンチ記念のZoom勉強会を、参加無料で開催中です。専門家や創業者に直接質問できる機会です。</p>
+      <a class="btn btn--contrast btn--lg" href="#cta">無料勉強会の詳細を見る →</a>
+    </div>
+  </section>
+
   <!-- PROGRAMS -->
   <section class="section" id="programs">
     <div class="container">
@@ -1176,7 +1226,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
 
       <div class="cta-actions">
         <a class="hanko" aria-hidden="true"><span>無</span><span>料</span></a>
-        <a class="btn btn--primary btn--lg" href="#" target="_blank" rel="noopener">無料勉強会に申し込む →</a>
+        <a class="btn btn--contrast btn--lg" href="#" target="_blank" rel="noopener">無料勉強会に申し込む →</a>
       </div>
     </div>
   </section>
