@@ -331,6 +331,19 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .service-body h4{ font-size: 1rem; margin-bottom: 8px; }
 .service-body p{ font-size: 0.87rem; color: color-mix(in srgb, var(--sumi-text) 72%, transparent); }
 
+/* ---------- member journey diagram ---------- */
+.journey{ margin-top: 68px; }
+.journey-title{ font-size: clamp(1.4rem, 2.4vw, 1.75rem); margin: 14px 0 0; }
+.journey-figure{ margin: 0; overflow-x: auto; padding-bottom: 6px; }
+.journey-figure svg{ display: block; width: 100%; min-width: 680px; height: auto; }
+.journey-figure figcaption{
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--sumi-text) 65%, transparent);
+  border-top: 1px solid var(--washi-line);
+  padding-top: 16px;
+}
+
 /* ---------- founders ---------- */
 .founder-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
 .founder-card{
@@ -731,6 +744,77 @@ ul{ margin: 0; padding: 0; list-style: none; }
             <p>コミュニティ内で、経験や知見をシェアし合う。実際に挑戦した人同士だから分かることを。</p>
           </div>
         </div>
+      </div>
+
+      <div class="journey">
+        <div class="section-head" style="margin-top:0; margin-bottom:36px;">
+          <span class="eyebrow section-num">Member Journey</span>
+          <h3 class="journey-title">入会から、アメリカ進出へ。</h3>
+          <p class="section-lede">知る・学ぶ・繋がるを積み重ねた先に、アメリカでの挑戦が現実になる。SAMURAI GATEは、その一歩ずつを伴走します。</p>
+        </div>
+        <figure class="journey-figure">
+          <svg viewBox="0 0 1040 480" role="img" aria-label="SAMURAI GATE会員の成長ステップ。知るで市場の今を知り、学ぶで進出の実務を学び、繋がるで現地の人脈と出会い、進出するで夢が現実になる、という入会からアメリカ進出までの4段階の流れ。">
+            <defs>
+              <marker id="journey-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" style="fill:var(--kin);"/>
+              </marker>
+            </defs>
+
+            <!-- connectors -->
+            <g style="fill:none;stroke:var(--kin);stroke-width:2;opacity:0.65;">
+              <polyline points="240,366 390,366 390,344" marker-end="url(#journey-arrow)"/>
+              <polyline points="500,288 650,288 650,266" marker-end="url(#journey-arrow)"/>
+              <polyline points="760,210 910,210 910,188" marker-end="url(#journey-arrow)"/>
+            </g>
+
+            <!-- step 1: 知る -->
+            <g>
+              <rect x="20" y="312" width="220" height="108" rx="6" style="fill:var(--washi-2);stroke:var(--washi-line);stroke-width:1;"/>
+              <rect x="20" y="312" width="220" height="4" rx="2" style="fill:var(--kin);"/>
+              <text x="38" y="340" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 01</text>
+              <text x="130" y="368" text-anchor="middle" style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:23px;fill:var(--sumi-text);">知る</text>
+              <text x="130" y="394" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 68%, transparent);">市場の今を知る</text>
+            </g>
+
+            <!-- step 2: 学ぶ -->
+            <g>
+              <rect x="280" y="234" width="220" height="108" rx="6" style="fill:var(--washi-2);stroke:var(--washi-line);stroke-width:1;"/>
+              <rect x="280" y="234" width="220" height="4" rx="2" style="fill:var(--kin);"/>
+              <text x="298" y="262" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 02</text>
+              <text x="390" y="290" text-anchor="middle" style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:23px;fill:var(--sumi-text);">学ぶ</text>
+              <text x="390" y="316" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 68%, transparent);">進出の実務を学ぶ</text>
+            </g>
+
+            <!-- step 3: 繋がる -->
+            <g>
+              <rect x="540" y="156" width="220" height="108" rx="6" style="fill:var(--washi-2);stroke:var(--washi-line);stroke-width:1;"/>
+              <rect x="540" y="156" width="220" height="4" rx="2" style="fill:var(--kin);"/>
+              <text x="558" y="184" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 03</text>
+              <text x="650" y="212" text-anchor="middle" style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:23px;fill:var(--sumi-text);">繋がる</text>
+              <text x="650" y="238" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 68%, transparent);">現地の人脈と出会う</text>
+            </g>
+
+            <!-- step 4: 進出する(強調) -->
+            <g>
+              <rect x="800" y="78" width="220" height="108" rx="6" style="fill:var(--shu);stroke:var(--kin-bright);stroke-width:1.5;"/>
+              <text x="818" y="106" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin-bright);">STEP 04</text>
+              <text x="910" y="134" text-anchor="middle" style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:23px;fill:var(--navy-text);">進出する</text>
+              <text x="910" y="160" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:var(--paper-sub);">夢が現実になる</text>
+            </g>
+
+            <!-- badge -->
+            <rect x="818" y="28" width="212" height="30" rx="15" style="fill:var(--navy);"/>
+            <text x="924" y="48" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.04em;fill:var(--kin-bright);">SAMURAI GATE 会員の成長ステップ</text>
+
+            <!-- axis -->
+            <g style="stroke:var(--washi-line);stroke-width:1.5;">
+              <line x1="20" y1="456" x2="1020" y2="456" marker-end="url(#journey-arrow)"/>
+            </g>
+            <text x="20" y="478" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13px;fill:var(--sumi-text);">入会</text>
+            <text x="1012" y="478" text-anchor="end" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13px;fill:var(--shu);">アメリカ進出</text>
+          </svg>
+          <figcaption>SAMURAI GATEは、知る・学ぶ・繋がるの先に、アメリカ進出という結果をつくるコミュニティです。</figcaption>
+        </figure>
       </div>
     </div>
   </section>
