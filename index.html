@@ -335,7 +335,7 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .journey{ margin-top: 68px; }
 .journey-title{ font-size: clamp(1.4rem, 2.4vw, 1.75rem); margin: 14px 0 0; }
 .journey-figure{ margin: 0; overflow-x: auto; padding-bottom: 6px; }
-.journey-figure svg{ display: block; width: 100%; min-width: 680px; height: auto; }
+.journey-figure svg{ display: block; width: 100%; min-width: 820px; height: auto; }
 .journey-figure figcaption{
   margin-top: 18px;
   font-size: 0.85rem;
@@ -756,72 +756,111 @@ ul{ margin: 0; padding: 0; list-style: none; }
       <div class="journey">
         <div class="section-head" style="margin-top:0; margin-bottom:36px;">
           <span class="eyebrow section-num">Member Journey</span>
-          <h3 class="journey-title">入会から、アメリカ進出へ。</h3>
-          <p class="section-lede">知る・学ぶ・繋がるを積み重ねた先に、アメリカでの挑戦が現実になる。SAMURAI GATEは、その一歩ずつを伴走します。</p>
+          <h3 class="journey-title">SAMURAI GATE 米国進出支援プログラム：4ステップ成長プロセス</h3>
+          <p class="section-lede">繋がる・学ぶ・検証するを積み重ねた先に、アメリカでの挑戦が現実になる。SAMURAI GATEは、その一歩ずつを伴走します。</p>
         </div>
         <figure class="journey-figure">
-          <svg viewBox="0 0 1040 480" role="img" aria-label="SAMURAI GATE会員の成長ステップ。知るでそれぞれの企業にあった専門家から情報を学び、学ぶでセミナーや現地視察から実務を学び、繋がるで現地の人脈と出会い、進出するでテストマーケティングを経て夢が現実になる、という入会からアメリカ進出までの4段階の流れ。">
+          <svg viewBox="0 0 1200 640" role="img" aria-label="SAMURAI GATE 米国進出支援プログラム、4ステップ成長プロセス。ステップ1 繋がるでSAMURAI GATE独自の専門家たちで結成されるコミュニティへ参加し、ステップ2 学ぶで専門家たちによる講義からアメリカの今を学び、ステップ3 検証するで現地の展示会・イベント視察・AIでのニーズ調査により構想状態からよりリアルなモデルへと昇華し、ステップ4 進出するでアメリカ現地でのビジネスを成功させる、という4段階の流れ。">
             <defs>
-              <marker id="journey-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" style="fill:var(--kin);"/>
-              </marker>
+              <linearGradient id="ribbonGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:var(--kin)"/>
+                <stop offset="100%" style="stop-color:var(--shu)"/>
+              </linearGradient>
+              <linearGradient id="badgeNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:var(--navy-2)"/>
+                <stop offset="100%" style="stop-color:var(--navy)"/>
+              </linearGradient>
+              <linearGradient id="badgeShu" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:var(--shu)"/>
+                <stop offset="100%" style="stop-color:var(--shu-deep)"/>
+              </linearGradient>
+              <pattern id="journeyDots" width="26" height="26" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.4" style="fill:var(--kin);opacity:0.22;"/>
+              </pattern>
             </defs>
 
-            <!-- connectors -->
-            <g style="fill:none;stroke:var(--kin);stroke-width:2;opacity:0.65;">
-              <polyline points="240,366 390,366 390,344" marker-end="url(#journey-arrow)"/>
-              <polyline points="500,288 650,288 650,266" marker-end="url(#journey-arrow)"/>
-              <polyline points="760,210 910,210 910,188" marker-end="url(#journey-arrow)"/>
-            </g>
+            <!-- panel -->
+            <rect x="10" y="10" width="1180" height="620" rx="18" style="fill:var(--washi-2);stroke:var(--washi-line);stroke-width:1.5;"/>
+            <rect x="10" y="10" width="1180" height="620" rx="18" style="fill:url(#journeyDots);"/>
 
-            <!-- step 1: 知る -->
+            <!-- ascending ribbon -->
+            <path d="M90,460 C150,440 160,430 190,420 C300,420 400,340 490,320 C600,300 700,240 790,220 C900,200 1020,150 1070,120 L1120,85"
+                  style="fill:none;stroke:url(#ribbonGrad);stroke-width:16;stroke-linecap:round;opacity:0.85;"/>
+            <polygon points="1120,70 1148,86 1116,100" style="fill:var(--shu);"/>
+
+            <!-- STEP 1: 繋がる -->
             <g>
-              <rect x="20" y="312" width="220" height="108" rx="6" style="fill:var(--washi-2);stroke:var(--washi-line);stroke-width:1;"/>
-              <rect x="20" y="312" width="220" height="4" rx="2" style="fill:var(--kin);"/>
-              <text x="38" y="340" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 01</text>
-              <text x="130" y="368" text-anchor="middle" style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:23px;fill:var(--sumi-text);">知る</text>
-              <text x="130" y="388" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:11.5px;fill:color-mix(in srgb, var(--sumi-text) 68%, transparent);">それぞれの企業にあった</text>
-              <text x="130" y="404" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:11.5px;fill:color-mix(in srgb, var(--sumi-text) 68%, transparent);">専門家から情報を学ぶ</text>
+              <circle cx="190" cy="420" r="58" style="fill:rgba(16,23,42,0.22);" transform="translate(0,6)"/>
+              <circle cx="190" cy="420" r="56" style="fill:url(#badgeNavy);stroke:var(--kin-bright);stroke-width:3;"/>
+              <g transform="translate(190,420)">
+                <circle cx="-11" cy="2" r="8" style="fill:none;stroke:var(--navy-text);stroke-width:3;"/>
+                <circle cx="11" cy="2" r="8" style="fill:none;stroke:var(--navy-text);stroke-width:3;"/>
+                <path d="M-11,-6 V2 M11,-6 V2" style="stroke:var(--navy-text);stroke-width:3;stroke-linecap:round;"/>
+                <path d="M-11,2 H11" style="stroke:var(--kin-bright);stroke-width:4;stroke-linecap:round;"/>
+              </g>
+              <text x="190" y="496" text-anchor="middle" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 1</text>
+              <text text-anchor="middle" x="190" y="522"><tspan style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:22px;fill:var(--sumi-text);">繋がる</tspan><tspan style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;fill:var(--kin);"> (Connect)</tspan></text>
+              <text x="190" y="544" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">SAMURAI GATE独自の</text>
+              <text x="190" y="562" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">専門家たちで結成される</text>
+              <text x="190" y="580" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">コミュニティへ参加する</text>
             </g>
 
-            <!-- step 2: 学ぶ -->
+            <!-- STEP 2: 学ぶ -->
             <g>
-              <rect x="280" y="234" width="220" height="108" rx="6" style="fill:var(--washi-2);stroke:var(--washi-line);stroke-width:1;"/>
-              <rect x="280" y="234" width="220" height="4" rx="2" style="fill:var(--kin);"/>
-              <text x="298" y="262" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 02</text>
-              <text x="390" y="290" text-anchor="middle" style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:23px;fill:var(--sumi-text);">学ぶ</text>
-              <text x="390" y="316" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 68%, transparent);">セミナー視察で実務を学ぶ</text>
+              <circle cx="490" cy="320" r="58" style="fill:rgba(16,23,42,0.22);" transform="translate(0,6)"/>
+              <circle cx="490" cy="320" r="56" style="fill:url(#badgeNavy);stroke:var(--kin-bright);stroke-width:3;"/>
+              <g transform="translate(490,320)">
+                <path d="M-19,-15h14v30h-14zM-1,-15h14v30h-14z" style="fill:none;stroke:var(--navy-text);stroke-width:3;stroke-linejoin:round;"/>
+              </g>
+              <text x="490" y="396" text-anchor="middle" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 2</text>
+              <text text-anchor="middle" x="490" y="422"><tspan style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:22px;fill:var(--sumi-text);">学ぶ</tspan><tspan style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;fill:var(--kin);"> (Learn)</tspan></text>
+              <text x="490" y="444" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">専門家たちによる講義から</text>
+              <text x="490" y="462" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">アメリカの今を学ぶ</text>
             </g>
 
-            <!-- step 3: 繋がる -->
+            <!-- STEP 3: 検証する -->
             <g>
-              <rect x="540" y="156" width="220" height="108" rx="6" style="fill:var(--washi-2);stroke:var(--washi-line);stroke-width:1;"/>
-              <rect x="540" y="156" width="220" height="4" rx="2" style="fill:var(--kin);"/>
-              <text x="558" y="184" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 03</text>
-              <text x="650" y="212" text-anchor="middle" style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:23px;fill:var(--sumi-text);">繋がる</text>
-              <text x="650" y="238" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 68%, transparent);">現地の人脈と出会う</text>
+              <circle cx="790" cy="220" r="58" style="fill:rgba(16,23,42,0.22);" transform="translate(0,6)"/>
+              <circle cx="790" cy="220" r="56" style="fill:url(#badgeNavy);stroke:var(--kin-bright);stroke-width:3;"/>
+              <g transform="translate(790,220)">
+                <circle cx="-5" cy="-5" r="13" style="fill:none;stroke:var(--navy-text);stroke-width:3;"/>
+                <path d="M4,4 L17,17" style="stroke:var(--navy-text);stroke-width:3;stroke-linecap:round;"/>
+                <path d="M-10,-2 V-8 M-5,-2 V-12 M0,-2 V-6" style="stroke:var(--kin-bright);stroke-width:2.4;stroke-linecap:round;"/>
+              </g>
+              <text x="790" y="296" text-anchor="middle" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 3</text>
+              <text text-anchor="middle" x="790" y="322"><tspan style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:22px;fill:var(--sumi-text);">検証する</tspan><tspan style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;fill:var(--kin);"> (Validate)</tspan></text>
+              <text x="790" y="344" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">現地の展示会・イベント視察・</text>
+              <text x="790" y="362" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">AIでのニーズ調査により</text>
+              <text x="790" y="380" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">構想状態からよりリアルな</text>
+              <text x="790" y="398" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">モデルへと昇華する</text>
             </g>
 
-            <!-- step 4: 進出する(強調) -->
+            <!-- STEP 4: 進出する(強調) -->
             <g>
-              <rect x="800" y="78" width="220" height="108" rx="6" style="fill:var(--shu);stroke:var(--kin-bright);stroke-width:1.5;"/>
-              <text x="818" y="106" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin-bright);">STEP 04</text>
-              <text x="910" y="134" text-anchor="middle" style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:23px;fill:var(--navy-text);">進出する</text>
-              <text x="910" y="160" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:var(--paper-sub);">テストを経て、夢が現実に</text>
+              <circle cx="1070" cy="120" r="58" style="fill:rgba(16,23,42,0.22);" transform="translate(0,6)"/>
+              <circle cx="1070" cy="120" r="56" style="fill:url(#badgeShu);stroke:var(--kin-bright);stroke-width:3;"/>
+              <g transform="translate(1070,120)">
+                <path d="M-17,13 V5 M-5,13 V-5 M7,13 V-13" style="stroke:var(--navy-text);stroke-width:5;stroke-linecap:round;"/>
+                <path d="M7,-13 V-23" style="stroke:var(--kin-bright);stroke-width:3;stroke-linecap:round;"/>
+                <path d="M7,-23 L19,-18 L7,-13 Z" style="fill:var(--kin-bright);"/>
+              </g>
+              <text x="1070" y="196" text-anchor="middle" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin-bright);">STEP 4</text>
+              <text text-anchor="middle" x="1070" y="222"><tspan style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:22px;fill:var(--sumi-text);">進出する</tspan><tspan style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;fill:var(--kin);"> (Advance)</tspan></text>
+              <text x="1070" y="244" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">アメリカ現地での</text>
+              <text x="1070" y="262" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">ビジネスを成功させる</text>
             </g>
 
-            <!-- badge -->
-            <rect x="818" y="28" width="212" height="30" rx="15" style="fill:var(--navy);"/>
-            <text x="924" y="48" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.04em;fill:var(--kin-bright);">SAMURAI GATE 会員の成長ステップ</text>
+            <!-- program tag -->
+            <rect x="880" y="34" width="270" height="32" rx="16" style="fill:var(--navy);"/>
+            <text x="1015" y="55" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.03em;fill:var(--kin-bright);">SAMURAI GATE 米国進出支援プログラム</text>
 
             <!-- axis -->
-            <g style="stroke:var(--washi-line);stroke-width:1.5;">
-              <line x1="20" y1="456" x2="1020" y2="456" marker-end="url(#journey-arrow)"/>
-            </g>
-            <text x="20" y="478" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13px;fill:var(--sumi-text);">入会</text>
-            <text x="1012" y="478" text-anchor="end" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13px;fill:var(--shu);">アメリカ進出</text>
+            <line x1="90" y1="600" x2="1150" y2="600" style="stroke:var(--washi-line);stroke-width:1.5;"/>
+            <polygon points="1150,594 1164,600 1150,606" style="fill:var(--washi-line);"/>
+            <text x="90" y="622" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13px;fill:var(--sumi-text);">入会</text>
+            <text x="1150" y="622" text-anchor="end" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13px;fill:var(--shu);">アメリカ進出</text>
           </svg>
-          <figcaption>SAMURAI GATEは、知る・学ぶ・繋がるの先に、アメリカ進出という結果をつくるコミュニティです。</figcaption>
+          <figcaption>SAMURAI GATEは、繋がる・学ぶ・検証するの先に、アメリカ進出という結果をつくるコミュニティです。</figcaption>
         </figure>
       </div>
     </div>
