@@ -336,13 +336,6 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .journey-title{ font-size: clamp(1.4rem, 2.4vw, 1.75rem); margin: 14px 0 0; }
 .journey-figure{ margin: 0; overflow-x: auto; padding-bottom: 6px; }
 .journey-figure svg{ display: block; width: 100%; min-width: 820px; height: auto; }
-.journey-figure figcaption{
-  margin-top: 18px;
-  font-size: 0.85rem;
-  color: color-mix(in srgb, var(--sumi-text) 65%, transparent);
-  border-top: 1px solid var(--washi-line);
-  padding-top: 16px;
-}
 
 /* ---------- founders ---------- */
 .founder-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
@@ -351,20 +344,6 @@ ul{ margin: 0; padding: 0; list-style: none; }
   border: 1px solid var(--washi-line);
   border-radius: 3px;
   padding: 32px;
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-}
-.founder-avatar{
-  width: 84px; height: 84px; flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--navy);
-  border: 2px solid var(--shu);
-  display: flex; align-items: center; justify-content: center;
-  font-family: "Shippori Mincho", serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: var(--kin-bright);
 }
 .founder-body{ min-width: 0; }
 .founder-name{ font-size: 1.25rem; margin-bottom: 4px; }
@@ -526,7 +505,6 @@ ul{ margin: 0; padding: 0; list-style: none; }
   .service-grid{ grid-template-columns: 1fr; }
   .hero-stats{ gap: 20px; }
   .cta-actions{ flex-direction: column; }
-  .founder-card{ flex-direction: column; }
   .speaker{ flex-direction: column; }
   .speaker-photo{ width: 100%; height: 240px; }
 }
@@ -760,9 +738,9 @@ ul{ margin: 0; padding: 0; list-style: none; }
           <p class="section-lede">繋がる・学ぶ・検証するを積み重ねた先に、アメリカでの挑戦が現実になる。SAMURAI GATEは、その一歩ずつを伴走します。</p>
         </div>
         <figure class="journey-figure">
-          <svg viewBox="0 0 1200 640" role="img" aria-label="SAMURAI GATE 米国進出支援プログラム、4ステップ成長プロセス。ステップ1 繋がるでSAMURAI GATE独自の専門家たちで結成されるコミュニティへ参加し、ステップ2 学ぶで専門家たちによる講義からアメリカの今を学び、ステップ3 検証するで現地の展示会・イベント視察・AIでのニーズ調査により構想状態からよりリアルなモデルへと昇華し、ステップ4 進出するでアメリカ現地でのビジネスを成功させる、という4段階の流れ。">
+          <svg viewBox="0 0 1200 400" role="img" aria-label="SAMURAI GATE 米国進出支援プログラム、4ステップ成長プロセス。ステップ1 繋がるでSAMURAI GATE独自の専門家たちで結成されるコミュニティへ参加し、ステップ2 学ぶで専門家たちによる講義からアメリカの今を学び、ステップ3 検証するで現地の展示会・イベント視察・AIでのニーズ調査により構想状態からよりリアルなモデルへと昇華し、ステップ4 進出するでアメリカ現地でのビジネスを成功させる、という4段階の流れ。">
             <defs>
-              <linearGradient id="ribbonGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" style="stop-color:var(--kin)"/>
                 <stop offset="100%" style="stop-color:var(--shu)"/>
               </linearGradient>
@@ -780,87 +758,79 @@ ul{ margin: 0; padding: 0; list-style: none; }
             </defs>
 
             <!-- panel -->
-            <rect x="10" y="10" width="1180" height="620" rx="18" style="fill:var(--washi-2);stroke:var(--washi-line);stroke-width:1.5;"/>
-            <rect x="10" y="10" width="1180" height="620" rx="18" style="fill:url(#journeyDots);"/>
+            <rect x="10" y="10" width="1180" height="380" rx="18" style="fill:var(--washi-2);stroke:var(--washi-line);stroke-width:1.5;"/>
+            <rect x="10" y="10" width="1180" height="380" rx="18" style="fill:url(#journeyDots);"/>
 
-            <!-- ascending ribbon -->
-            <path d="M90,460 C150,440 160,430 190,420 C300,420 400,340 490,320 C600,300 700,240 790,220 C900,200 1020,150 1070,120 L1120,85"
-                  style="fill:none;stroke:url(#ribbonGrad);stroke-width:16;stroke-linecap:round;opacity:0.85;"/>
-            <polygon points="1120,70 1148,86 1116,100" style="fill:var(--shu);"/>
+            <!-- program tag -->
+            <rect x="465" y="28" width="270" height="32" rx="16" style="fill:var(--navy);"/>
+            <text x="600" y="49" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.03em;fill:var(--kin-bright);">SAMURAI GATE 米国進出支援プログラム</text>
+
+            <!-- straight ribbon -->
+            <path d="M90,170 L1150,170" style="fill:none;stroke:url(#ribbonGrad);stroke-width:14;stroke-linecap:round;opacity:0.85;"/>
+            <polygon points="1150,156 1180,170 1150,184" style="fill:var(--shu);"/>
 
             <!-- STEP 1: 繋がる -->
             <g>
-              <circle cx="190" cy="420" r="58" style="fill:rgba(16,23,42,0.22);" transform="translate(0,6)"/>
-              <circle cx="190" cy="420" r="56" style="fill:url(#badgeNavy);stroke:var(--kin-bright);stroke-width:3;"/>
-              <g transform="translate(190,420)">
+              <circle cx="190" cy="170" r="58" style="fill:rgba(16,23,42,0.22);" transform="translate(0,6)"/>
+              <circle cx="190" cy="170" r="56" style="fill:url(#badgeNavy);stroke:var(--kin-bright);stroke-width:3;"/>
+              <g transform="translate(190,170)">
                 <circle cx="-11" cy="2" r="8" style="fill:none;stroke:var(--navy-text);stroke-width:3;"/>
                 <circle cx="11" cy="2" r="8" style="fill:none;stroke:var(--navy-text);stroke-width:3;"/>
                 <path d="M-11,-6 V2 M11,-6 V2" style="stroke:var(--navy-text);stroke-width:3;stroke-linecap:round;"/>
                 <path d="M-11,2 H11" style="stroke:var(--kin-bright);stroke-width:4;stroke-linecap:round;"/>
               </g>
-              <text x="190" y="496" text-anchor="middle" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 1</text>
-              <text text-anchor="middle" x="190" y="522"><tspan style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:22px;fill:var(--sumi-text);">繋がる</tspan><tspan style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;fill:var(--kin);"> (Connect)</tspan></text>
-              <text x="190" y="544" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">SAMURAI GATE独自の</text>
-              <text x="190" y="562" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">専門家たちで結成される</text>
-              <text x="190" y="580" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">コミュニティへ参加する</text>
+              <text x="190" y="246" text-anchor="middle" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 1</text>
+              <text text-anchor="middle" x="190" y="272"><tspan style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:22px;fill:var(--sumi-text);">繋がる</tspan><tspan style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;fill:var(--kin);"> (Connect)</tspan></text>
+              <text x="190" y="294" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">SAMURAI GATE独自の</text>
+              <text x="190" y="312" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">専門家たちで結成される</text>
+              <text x="190" y="330" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">コミュニティへ参加する</text>
             </g>
 
             <!-- STEP 2: 学ぶ -->
             <g>
-              <circle cx="490" cy="320" r="58" style="fill:rgba(16,23,42,0.22);" transform="translate(0,6)"/>
-              <circle cx="490" cy="320" r="56" style="fill:url(#badgeNavy);stroke:var(--kin-bright);stroke-width:3;"/>
-              <g transform="translate(490,320)">
+              <circle cx="490" cy="170" r="58" style="fill:rgba(16,23,42,0.22);" transform="translate(0,6)"/>
+              <circle cx="490" cy="170" r="56" style="fill:url(#badgeNavy);stroke:var(--kin-bright);stroke-width:3;"/>
+              <g transform="translate(490,170)">
                 <path d="M-19,-15h14v30h-14zM-1,-15h14v30h-14z" style="fill:none;stroke:var(--navy-text);stroke-width:3;stroke-linejoin:round;"/>
               </g>
-              <text x="490" y="396" text-anchor="middle" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 2</text>
-              <text text-anchor="middle" x="490" y="422"><tspan style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:22px;fill:var(--sumi-text);">学ぶ</tspan><tspan style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;fill:var(--kin);"> (Learn)</tspan></text>
-              <text x="490" y="444" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">専門家たちによる講義から</text>
-              <text x="490" y="462" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">アメリカの今を学ぶ</text>
+              <text x="490" y="246" text-anchor="middle" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 2</text>
+              <text text-anchor="middle" x="490" y="272"><tspan style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:22px;fill:var(--sumi-text);">学ぶ</tspan><tspan style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;fill:var(--kin);"> (Learn)</tspan></text>
+              <text x="490" y="294" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">専門家たちによる講義から</text>
+              <text x="490" y="312" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">アメリカの今を学ぶ</text>
             </g>
 
             <!-- STEP 3: 検証する -->
             <g>
-              <circle cx="790" cy="220" r="58" style="fill:rgba(16,23,42,0.22);" transform="translate(0,6)"/>
-              <circle cx="790" cy="220" r="56" style="fill:url(#badgeNavy);stroke:var(--kin-bright);stroke-width:3;"/>
-              <g transform="translate(790,220)">
+              <circle cx="790" cy="170" r="58" style="fill:rgba(16,23,42,0.22);" transform="translate(0,6)"/>
+              <circle cx="790" cy="170" r="56" style="fill:url(#badgeNavy);stroke:var(--kin-bright);stroke-width:3;"/>
+              <g transform="translate(790,170)">
                 <circle cx="-5" cy="-5" r="13" style="fill:none;stroke:var(--navy-text);stroke-width:3;"/>
                 <path d="M4,4 L17,17" style="stroke:var(--navy-text);stroke-width:3;stroke-linecap:round;"/>
                 <path d="M-10,-2 V-8 M-5,-2 V-12 M0,-2 V-6" style="stroke:var(--kin-bright);stroke-width:2.4;stroke-linecap:round;"/>
               </g>
-              <text x="790" y="296" text-anchor="middle" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 3</text>
-              <text text-anchor="middle" x="790" y="322"><tspan style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:22px;fill:var(--sumi-text);">検証する</tspan><tspan style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;fill:var(--kin);"> (Validate)</tspan></text>
-              <text x="790" y="344" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">現地の展示会・イベント視察・</text>
-              <text x="790" y="362" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">AIでのニーズ調査により</text>
-              <text x="790" y="380" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">構想状態からよりリアルな</text>
-              <text x="790" y="398" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">モデルへと昇華する</text>
+              <text x="790" y="246" text-anchor="middle" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin);">STEP 3</text>
+              <text text-anchor="middle" x="790" y="272"><tspan style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:22px;fill:var(--sumi-text);">検証する</tspan><tspan style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;fill:var(--kin);"> (Validate)</tspan></text>
+              <text x="790" y="294" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">現地の展示会・イベント視察・</text>
+              <text x="790" y="312" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">AIでのニーズ調査により</text>
+              <text x="790" y="330" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">構想状態からよりリアルな</text>
+              <text x="790" y="348" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">モデルへと昇華する</text>
             </g>
 
             <!-- STEP 4: 進出する(強調) -->
             <g>
-              <circle cx="1070" cy="120" r="58" style="fill:rgba(16,23,42,0.22);" transform="translate(0,6)"/>
-              <circle cx="1070" cy="120" r="56" style="fill:url(#badgeShu);stroke:var(--kin-bright);stroke-width:3;"/>
-              <g transform="translate(1070,120)">
+              <circle cx="1090" cy="170" r="58" style="fill:rgba(16,23,42,0.22);" transform="translate(0,6)"/>
+              <circle cx="1090" cy="170" r="56" style="fill:url(#badgeShu);stroke:var(--kin-bright);stroke-width:3;"/>
+              <g transform="translate(1090,170)">
                 <path d="M-17,13 V5 M-5,13 V-5 M7,13 V-13" style="stroke:var(--navy-text);stroke-width:5;stroke-linecap:round;"/>
                 <path d="M7,-13 V-23" style="stroke:var(--kin-bright);stroke-width:3;stroke-linecap:round;"/>
                 <path d="M7,-23 L19,-18 L7,-13 Z" style="fill:var(--kin-bright);"/>
               </g>
-              <text x="1070" y="196" text-anchor="middle" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin-bright);">STEP 4</text>
-              <text text-anchor="middle" x="1070" y="222"><tspan style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:22px;fill:var(--sumi-text);">進出する</tspan><tspan style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;fill:var(--kin);"> (Advance)</tspan></text>
-              <text x="1070" y="244" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">アメリカ現地での</text>
-              <text x="1070" y="262" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">ビジネスを成功させる</text>
+              <text x="1090" y="246" text-anchor="middle" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:14px;fill:var(--kin-bright);">STEP 4</text>
+              <text text-anchor="middle" x="1090" y="272"><tspan style="font-family:'Shippori Mincho',serif;font-weight:700;font-size:22px;fill:var(--sumi-text);">進出する</tspan><tspan style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;fill:var(--kin);"> (Advance)</tspan></text>
+              <text x="1090" y="294" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">アメリカ現地での</text>
+              <text x="1090" y="312" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;fill:color-mix(in srgb, var(--sumi-text) 70%, transparent);">ビジネスを成功させる</text>
             </g>
-
-            <!-- program tag -->
-            <rect x="880" y="34" width="270" height="32" rx="16" style="fill:var(--navy);"/>
-            <text x="1015" y="55" text-anchor="middle" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:11px;letter-spacing:0.03em;fill:var(--kin-bright);">SAMURAI GATE 米国進出支援プログラム</text>
-
-            <!-- axis -->
-            <line x1="90" y1="600" x2="1150" y2="600" style="stroke:var(--washi-line);stroke-width:1.5;"/>
-            <polygon points="1150,594 1164,600 1150,606" style="fill:var(--washi-line);"/>
-            <text x="90" y="622" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13px;fill:var(--sumi-text);">入会</text>
-            <text x="1150" y="622" text-anchor="end" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13px;fill:var(--shu);">アメリカ進出</text>
           </svg>
-          <figcaption>SAMURAI GATEは、繋がる・学ぶ・検証するの先に、アメリカ進出という結果をつくるコミュニティです。</figcaption>
         </figure>
       </div>
     </div>
@@ -876,7 +846,6 @@ ul{ margin: 0; padding: 0; list-style: none; }
       </div>
       <div class="founder-grid">
         <div class="founder-card">
-          <div class="founder-avatar">吉</div>
           <div class="founder-body">
             <h3 class="founder-name">吉岡 憲治 <span style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:0.95rem; color:var(--kin);">Kenji Yoshioka</span></h3>
             <span class="founder-role">株式会社スペースエイジ 代表取締役 / Space Age USA, Inc. CEO</span>
@@ -889,7 +858,6 @@ ul{ margin: 0; padding: 0; list-style: none; }
           </div>
         </div>
         <div class="founder-card">
-          <div class="founder-avatar">村</div>
           <div class="founder-body">
             <h3 class="founder-name">村井 洋仁 <span style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:0.95rem; color:var(--kin);">Hirohito Murai</span></h3>
             <span class="founder-role">株式会社マルヒサ 代表取締役 / Japan Together株式会社 代表取締役</span>
