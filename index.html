@@ -206,14 +206,39 @@ ul{ margin: 0; padding: 0; list-style: none; }
 }
 .about-caption::before{ content: ""; width: 18px; height: 1px; background: currentColor; opacity: 0.6; }
 
-/* ---------- features (terse 4-pillar strip) ---------- */
-.features-grid{ display: grid; grid-template-columns: repeat(4, 1fr); }
-.feature-col{ padding: 0 28px; border-left: 1px solid var(--line); }
-.feature-col:first-child{ border-left: none; padding-left: 0; }
-.feature-col .num{ font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 600; font-size: 0.85rem; color: var(--gold-deep); display: block; margin-bottom: 18px; }
-.feature-col .ic{ width: 26px; height: 26px; color: var(--navy); margin-bottom: 18px; }
-.feature-col h3{ font-size: 1.08rem; margin-bottom: 10px; color: var(--navy); }
-.feature-col p{ font-size: 0.84rem; color: var(--text-sub); line-height: 1.7; }
+/* ---------- what you gain (midnight navy, premium bento) ---------- */
+.gain{ position: relative; }
+.gain::before{
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 55% 45% at 85% 0%, rgba(212,166,90,0.12), transparent 70%);
+}
+.gain .container{ position: relative; z-index: 1; }
+.gain-feature{
+  display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 48px;
+  background: linear-gradient(135deg, rgba(212,166,90,0.10), rgba(195,71,54,0.04) 65%, transparent 100%);
+  border: 1px solid rgba(212,166,90,0.28);
+  border-radius: 2px;
+  padding: 56px;
+  margin-bottom: 1px;
+}
+.gain-stat{ text-align: center; flex-shrink: 0; padding: 0 12px; }
+.gain-stat .n{ font-family: "Noto Serif JP", serif; font-weight: 700; font-size: clamp(4rem, 7vw, 6.4rem); line-height: 1; color: var(--gold); }
+.gain-stat .l{ display: block; margin-top: 12px; font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 0.85rem; letter-spacing: 0.08em; color: var(--on-navy-sub); white-space: nowrap; }
+.gain-feature-copy .tag{
+  display: inline-block; font-size: 0.7rem; letter-spacing: 0.14em; color: var(--vermilion);
+  background: rgba(195,71,54,0.16); border: 1px solid rgba(195,71,54,0.4); padding: 5px 14px;
+  border-radius: 999px; margin-bottom: 18px;
+}
+.gain-feature-copy h3{ font-size: clamp(1.4rem, 2.4vw, 1.85rem); color: #fff; margin-bottom: 14px; }
+.gain-feature-copy p{ font-size: 1rem; color: var(--on-navy-sub); max-width: 480px; line-height: 1.9; }
+.gain-feature-copy p strong{ color: var(--gold); font-weight: 700; }
+
+.gain-grid{ display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(246,243,236,0.14); border-left: 1px solid rgba(246,243,236,0.14); }
+.gain-cell{ border-right: 1px solid rgba(246,243,236,0.14); border-bottom: 1px solid rgba(246,243,236,0.14); padding: 40px 36px; }
+.gain-cell .num{ font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: 1.6rem; color: var(--gold); opacity: 0.85; display: block; margin-bottom: 16px; }
+.gain-cell .ic{ width: 26px; height: 26px; color: var(--steel-bright); margin-bottom: 16px; display: block; }
+.gain-cell h4{ font-size: 1.05rem; color: #fff; margin-bottom: 10px; }
+.gain-cell p{ font-size: 0.86rem; color: var(--on-navy-sub); line-height: 1.8; }
 
 /* ---------- community (midnight navy) ---------- */
 .section--navy{ background: var(--navy); color: var(--on-navy); position: relative; overflow: hidden; }
@@ -368,10 +393,9 @@ ul{ margin: 0; padding: 0; list-style: none; }
   .about-text{ padding-top: 0; }
   .about-row h2{ white-space: normal; }
   .about-photo{ aspect-ratio: 16 / 10; }
-  .features-grid{ grid-template-columns: repeat(2, 1fr); row-gap: 36px; }
-  .feature-col:nth-child(2n+1){ border-left: none; padding-left: 0; }
-  .feature-col:nth-child(1), .feature-col:nth-child(2){ border-top: none; }
-  .feature-col:nth-child(n+3){ border-top: 1px solid var(--line); padding-top: 28px; }
+  .gain-feature{ grid-template-columns: 1fr; text-align: center; padding: 44px 32px; gap: 28px; }
+  .gain-feature-copy p{ max-width: none; margin: 0 auto; }
+  .gain-grid{ grid-template-columns: 1fr; }
   .community-grid-new{ grid-template-columns: 1fr; }
   .timeline-steps{ grid-template-columns: 1fr; gap: 40px; }
   .timeline-steps::before{ left: 15px; right: auto; top: 15px; bottom: 15px; width: 2px; height: auto; }
@@ -486,38 +510,45 @@ ul{ margin: 0; padding: 0; list-style: none; }
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="section section--tight" style="background:var(--bg-deep);" id="features">
+  <!-- WHAT YOU GAIN -->
+  <section class="section section--tight section--navy gain" id="features">
     <div class="container">
       <div class="section-head section-head--center reveal">
-        <span class="eyebrow eyebrow--gold">What You Gain</span>
-        <h2 class="section-title">参加することで得られる価値</h2>
-        <p class="section-lede">学び・つながり・ビジネス・グローバルの4つの軸で、あなたの挑戦を支えます。</p>
+        <span class="eyebrow">What You Gain</span>
+        <h2 class="section-title">アメリカへの挑戦に、確かな武器を。</h2>
+        <p class="section-lede">学び・人脈・専門家・視点。4つの力が、あなたの挑戦を現実に変えます。</p>
       </div>
-      <div class="features-grid reveal">
-        <div class="feature-col">
+
+      <div class="gain-feature reveal">
+        <div class="gain-stat">
+          <span class="n">38</span>
+          <span class="l">CATEGORIES<br>OF EXPERTS</span>
+        </div>
+        <div class="gain-feature-copy">
+          <span class="tag">BUSINESS</span>
+          <h3>事業を支える専門家</h3>
+          <p>法務・税務・資金調達から現地マーケティングまで。<strong>38カテゴリーの専門家</strong>に、必要なときにアクセスできる。一人で抱え込む挑戦を、ここで終わりにする。</p>
+        </div>
+      </div>
+
+      <div class="gain-grid reveal">
+        <div class="gain-cell">
           <span class="num">01</span>
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 5h7v15H4zM13 5h7v15h-7z"/></svg>
-          <h3>学び</h3>
-          <p>海外展開に必要な知識を、最短距離で。</p>
+          <h4>世界で戦うための知識</h4>
+          <p>海外ビジネス・AI・市場動向。挑戦の前提となる知識を、最短距離で。</p>
         </div>
-        <div class="feature-col">
+        <div class="gain-cell">
           <span class="num">02</span>
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.6"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.1 1.7-4.6 4.2-5"/></svg>
-          <h3>つながり</h3>
-          <p>信頼できる仲間と、挑戦を分かち合う。</p>
+          <h4>挑戦を加速させる人脈</h4>
+          <p>同じ志を持つ経営者・挑戦者とつながる。孤独な挑戦をチームの挑戦へ。</p>
         </div>
-        <div class="feature-col">
+        <div class="gain-cell">
           <span class="num">03</span>
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 5h13a2 2 0 0 1 2 2v12l-4-2H4z"/></svg>
-          <h3>ビジネス</h3>
-          <p>38カテゴリーの専門家が、事業の壁を突破する。</p>
-        </div>
-        <div class="feature-col">
-          <span class="num">04</span>
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg>
-          <h3>グローバル</h3>
-          <p>日本発の挑戦を、世界基準の事業へ。</p>
+          <h4>世界を見据える視点</h4>
+          <p>日本発の挑戦を、世界基準の事業へ。視野を広げる機会がここにある。</p>
         </div>
       </div>
     </div>
