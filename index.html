@@ -332,7 +332,10 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .plan-price-block .label{ font-size: 0.8rem; color: var(--on-navy-sub); margin-bottom: 6px; display: block; }
 .plan-price-block .amount{ font-family: "Noto Serif JP", serif; font-weight: 700; font-size: 2.7rem; color: var(--on-navy); line-height: 1; }
 .plan-price-block .amount small{ font-size: 1.02rem; font-weight: 500; color: var(--on-navy-sub); }
-.plan-price-block .amount--accent{ font-size: 2.2rem; color: var(--gold); }
+.plan-price-block--hero .label{ font-size: 0.86rem; color: var(--gold); }
+.plan-price-block .amount--hero{ font-size: clamp(2.6rem, 4vw, 3.6rem); color: var(--vermilion); }
+.plan-price-block .amount--sub{ font-size: 1.7rem; color: var(--on-navy-sub); }
+.plan-price-block .amount--sub small{ font-size: 0.9rem; }
 .plan-price-block .old{ font-size: 0.82rem; color: var(--on-navy-sub); margin-top: 8px; }
 .plan-divider{ width: 1px; align-self: stretch; background: rgba(250,248,244,0.18); }
 .plan-benefits{ margin-left: auto; display: flex; flex-direction: column; gap: 10px; }
@@ -682,17 +685,17 @@ ul{ margin: 0; padding: 0; list-style: none; }
       </div>
 
       <div class="plan-card reveal">
-        <span class="plan-tag">〜2026年12月入会限定</span>
+        <span class="plan-tag">1年間無料キャンペーン</span>
         <div class="plan-bar">
           <div class="plan-prices">
-            <div class="plan-price-block">
-              <span class="label">月会費</span>
-              <div class="amount">5,000<small>円(税込) / 月</small></div>
+            <div class="plan-price-block plan-price-block--hero">
+              <span class="label">2026年12月までにご入会で</span>
+              <div class="amount amount--hero">1年間無料</div>
             </div>
             <div class="plan-divider"></div>
             <div class="plan-price-block">
-              <span class="label">2026年12月までにご入会で</span>
-              <div class="amount amount--accent">1年間無料</div>
+              <span class="label">月会費</span>
+              <div class="amount amount--sub">5,000<small>円(税込) / 月</small></div>
             </div>
           </div>
           <ul class="plan-benefits">
